@@ -15,7 +15,7 @@ class Router {
             unset($url[0]);
         }
         
-        require_once __DIR__ . '/../controllers/' . $this->controller . ".php";
+        require_once __DIR__ . '/../controllers/' . ucfirst($this->controller) . ".php";
 
         $this->controller = new $this->controller;
 
