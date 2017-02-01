@@ -2,15 +2,15 @@
 
 class Router {
     
-    protected $controller = 'Index';
+    protected $controller = 'main';
     protected $method = 'index';
     protected $params = [];
     
     public function __construct(){
         
         $url = $this->parseURL();
-        
-        if (file_exists(__DIR__ . "/../controllers/" . $url[0] . ".php")){
+
+        if (file_exists(__DIR__ . "/../controllers/" . ucfirst($url[0]) . ".php")){
             $this->controller = $url[0];
             unset($url[0]);
         }
@@ -26,11 +26,11 @@ class Router {
 
         $this->params = $url ? array_values($url) : [];
 
-        // var_dump($this->controller);
-        
-       echo '<pre>';
-       var_dump($url);
-       echo '</pre>';
+        call_user_func_array([$this->controller, $this->method], $this->params);
+
+       // echo '<pre>';
+       // var_dump($url);
+       // echo '</pre>';
     }
     
     public function parseURL(){
