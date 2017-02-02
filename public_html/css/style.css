@@ -1,6 +1,9 @@
 th {
 	text-align: center;
 }
+textarea {
+	resize: none;
+}
 /* table sort */
 table.tablesorter thead tr .header {
 	background-image: url(bg.gif);
