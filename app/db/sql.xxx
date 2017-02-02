@@ -1,0 +1,21 @@
+$db->query("
+    CREATE TABLE tasks (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    text_task TEXT NOT NULL,
+    path_image TEXT NOT NULL,
+    completed INTEGER NOT NULL,
+    date_create TEXT NOT NULL)
+    ")
+$db->query("
+                    INSERT INTO tasks (name, email, text_task, path_image, completed, date_create) VALUES 
+                    ('admin', 'admin@admin.com', 'Text task 01', 'false', 0, '0000-00-00'),
+                    ('user01', 'us01@us01.com', 'Text task 02', 'false', 0, '0000-00-00'),
+                    ('user02', 'us02@us02.com', 'Text task 03', 'false', 0, '0000-00-00'),
+                    ('user03', 'us03@us03.com', 'Text task 04', 'false', 0, '0000-00-00'),
+                    ('user04', 'us04@us04.com', 'Text task 05', 'false', 0, '0000-00-00'),
+                    ('user05', 'us05@us05.com', 'Text task 06', 'false', 0, '0000-00-00'),
+                    ('user06', 'us06@us06.com', 'Text task 07', 'false', 0, '0000-00-00'),
+                    ('user07', 'us07@us07.com', 'Text task 08', 'false', 0, '0000-00-00');
+                    ")
