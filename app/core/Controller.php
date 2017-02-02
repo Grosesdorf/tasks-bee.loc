@@ -1,6 +1,7 @@
 <?php
 
 class Controller {
+	
     public function task($task){
         require_once __DIR__ . '/../models/' . $task . '.php';
         return new $task();
